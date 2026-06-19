@@ -315,3 +315,74 @@ hr { border: 0; border-top: 1px solid var(--border-color); margin: 20px 0; }
 }
 
 [data-theme="dark"] .profile-btn { background: #3a3a45; color: #aaa; }
+
+/* 1. Force long text to wrap instead of bleeding out */
+* {
+    overflow-wrap: break-word;
+}
+
+/* 2. Allow long math equations to scroll horizontally */
+.calc-box, .document-section {
+    overflow-x: auto;
+}
+
+/* 3. Make the observation table horizontally scrollable */
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap; /* Keeps the table columns from squishing too thin */
+}
+
+/* 4. Restructure layout for screens smaller than a tablet */
+@media (max-width: 768px) {
+    /* Stack the header elements neatly */
+    .top-header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .header-left, .header-right {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .title-group h1 {
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+
+    /* Wrap the tabs so they don't go off the screen */
+    .tabs {
+        flex-wrap: wrap;
+        border-radius: 15px;
+    }
+
+    .tab-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Make experiment buttons full-width for easy tapping */
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+
+    /* Reduce padding to give more room for content on tiny screens */
+    .document-section, .panel {
+        padding: 15px;
+    }
+    
+    /* Make the visual pendulum container scale better */
+    #pendulum-container {
+        transform: scale(0.8);
+        margin-top: 0;
+    }
+}
