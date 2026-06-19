@@ -113,6 +113,8 @@ function runSimulation(mode) {
         
         // 180 degrees for maximum visual torsional effect
         const angle = 180 * Math.cos(2 * Math.PI * frequency * (elapsed / 1000)) * Math.exp(-elapsed / 2000);
+        
+        // Apply 3D rotation to both elements
         document.getElementById('cradle').style.transform = `rotateY(${angle}deg)`;
         cylinderDOM.style.transform = `rotateY(${angle}deg)`;
 
@@ -263,8 +265,10 @@ function resetExperiment() {
     document.getElementById('btn-both').disabled = true;
     document.getElementById('btn-both').innerText = "2. Oscillate Cradle + Cylinder";
     
+    // Correctly reset visual elements for 3D UI
     document.getElementById('cylinder').classList.add('hidden');
     document.getElementById('cradle').style.transform = `rotateY(0deg)`;
+    document.getElementById('cylinder').style.transform = `rotateY(0deg)`;
     document.getElementById('sim-status').innerText = "Set dimensions and start oscillation...";
     
     if (chartInstance) chartInstance.destroy();

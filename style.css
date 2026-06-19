@@ -180,9 +180,11 @@ input[type="range"] { width: 100%; margin-top: 5px; cursor: pointer; }
 .actions button:disabled { background: var(--border-color); cursor: not-allowed; }
 .actions button.secondary { background: #555; }
 
-/* Pendulum Visuals */
+/* =========================================
+   NEW REALISTIC PENDULUM VISUALS
+   ========================================= */
 #pendulum-container {
-    height: 300px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -190,17 +192,120 @@ input[type="range"] { width: 100%; margin-top: 5px; cursor: pointer; }
     position: relative;
     perspective: 800px;
 }
-#support { width: 100px; height: 10px; background: #555; }
-#wire { width: 2px; height: 150px; background: var(--wire-color); }
+
+#support {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+.clamp-base {
+    width: 140px; 
+    height: 12px; 
+    background: linear-gradient(to bottom, #bdc3c7, #7f8c8d);
+    border-radius: 3px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border: 1px solid #555;
+}
+.clamp-screw {
+    width: 40px;
+    height: 12px;
+    background: linear-gradient(to right, #95a5a6, #ecf0f1, #95a5a6);
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+#wire { 
+    width: 3px; 
+    height: 160px; 
+    background: linear-gradient(to right, #555, #ccc, #555); 
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+}
+
 #cradle {
-    width: 120px; height: 10px; background: #a67c00; 
+    position: relative;
+    width: 240px;  
+    height: 16px;  
+    transform-style: preserve-3d;
     transition: transform 0.1s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
 }
+.cradle-platform {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #d4af37, #aa8222); 
+    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+    border-radius: 2px;
+    border: 1px solid #8b6508;
+}
+.cradle-chuck {
+    position: absolute;
+    width: 20px;   
+    height: 30px;  
+    background: linear-gradient(to right, #bdc3c7, #fff, #bdc3c7);
+    border-radius: 3px;
+    bottom: 100%; 
+    z-index: 6;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+    border: 1px solid #7f8c8d;
+}
+
+.cradle-edge-left, .cradle-edge-right {
+    position: absolute;
+    width: 12px;   
+    height: 28px;  
+    background: linear-gradient(to top, #aa8222, #d4af37);
+    bottom: 0;
+    border-radius: 3px 3px 0 0;
+    border: 1px solid #8b6508;
+    box-shadow: inset 0 0 2px rgba(255,255,255,0.4);
+}
+.cradle-edge-left { left: 0; }
+.cradle-edge-right { right: 0; }
+
 #cylinder {
-    width: 60px; height: 30px; background: #607d8b;
-    position: absolute; top: 130px;
+    width: 190px;  
+    height: 50px;  
+    position: absolute; 
+    top: 134px;    
+    transform-style: preserve-3d;
     transition: transform 0.1s linear;
+    z-index: 20; 
+    display: flex;
+    justify-content: center;
 }
+.cylinder-left-face {
+    width: 20px;   
+    height: 100%;
+    background: #95a5a6;
+    border-radius: 50%;
+    border: 1px solid #7f8c8d;
+    position: absolute; 
+    left: -10px; 
+    z-index: 2;
+}
+.cylinder-body-face {
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(to bottom, #2c3e50, #7f8c8d, #ecf0f1, #95a5a6, #2c3e50); 
+    box-shadow: 0 12px 20px rgba(0,0,0,0.6);
+    border-top: 1px solid #ecf0f1;
+    border-bottom: 1px solid #1a252f;
+}
+.cylinder-right-curve {
+    width: 20px;   
+    height: 100%;
+    background: linear-gradient(to bottom, #2c3e50, #7f8c8d, #ecf0f1, #95a5a6, #2c3e50);
+    border-radius: 50%;
+    position: absolute; 
+    right: -10px; 
+    z-index: 1;
+}
+
 .hidden { display: none !important; }
 #sim-status { font-weight: bold; text-align: center; margin-top: 15px; color: var(--accent); }
 
@@ -291,8 +396,15 @@ th { background-color: rgba(0,0,0,0.05); }
     margin: 0 auto 15px auto;
 }
 
-[data-theme="dark"] .avatar { background: #333; }
+/* The fixed image sizing rule */
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
 
+[data-theme="dark"] .avatar { background: #333; }
 .avatar svg { width: 35px; height: 35px; fill: #6c757d; }
 
 .contributor-name {
