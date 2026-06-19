@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulus of Rigidity by Dynamic Method</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="top-header">
+        <div class="header-left">
+            <img src="IEM_LOGO.png" alt="IEM Logo" class="school-logo">
+            <div class="title-group">
+                <h1>Modulus of Rigidity by Dynamic Method</h1>
+                <span class="subtitle">Interactive virtual physics laboratory</span>
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <span class="subject-tag">Physics - Mechanics</span>
+            <img src="UEM_LOGO.png" alt="UEM Logo" class="school-logo">
+            <button id="theme-toggle" class="icon-btn">🌙</button>
+        </div>
+    </header>
+
+    <div class="tab-container">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('theory')">Theory & Procedure</button>
+            <button class="tab-btn" onclick="switchTab('experiment')">Experiment</button>
+            <button class="tab-btn" onclick="switchTab('about')">About</button>
+        </div>
+    </div>
+
+    <main>
+        <section id="theory" class="tab-content active">
+            <div class="document-section">
+                <h2>OBJECTIVE</h2>
+                <p>Determination of the rigidity modulus of the material of a wire by a dynamic method.</p>
+
+                <h2>APPARATUS</h2>
+                <p>Cradle with suspended wire, slide calipers, screw gauge, steel tape, weight box.</p>
+
+                <h2>THEORY</h2>
+                <p>The period T of the torsional oscillation of a body of moment of inertia I is given by,</p>
+                <p>\[ T = 2\pi\sqrt{I/C} \]</p>
+                <p>where C is the torsional couple for 1 radian twist in the suspension wire.</p>
+                <p>If the period of oscillation about the vertical axis,</p>
+                <ol type="a">
+                    <li>Of the cradle alone = T<sub>0</sub></li>
+                    <li>Of the cradle and the body of known moment of inertia = T<sub>1</sub></li>
+                </ol>
+                <p>Then, \[ T_0 = 2\pi\sqrt{I_0/C} \quad ......... (1) \]</p>
+                <p>\[ T_1 = 2\pi\sqrt{(I_1 + I_0)/C} \quad ......... (2) \]</p>
+                <p>Where \( I_0 \), \( I_1 \) are respectively the moment of inertia of cradle, known body.</p>
+                <p>The moment of inertia \( I_1 \) of the known body (which may be a cylinder or a rectangular bar) about the vertical axis passing through its center of gravity and perpendicular to its length is calculated from the formula,</p>
+                <p>\[ I_1 = M \left(\frac{L^2}{12} + \frac{R^2}{4}\right) \text{ (for cylinder);} \quad \text{or, } I_1 = \frac{M}{12}(L^2 + b^2) \text{ (for rectangular bar)} \quad ...... (3) \]</p>
+                <p>Here M, L, b and R represent mass, length, breadth and radius of the known body respectively.</p>
+                <p>\[ \text{Now } C = \frac{\pi\eta r^4}{2l} \quad ......... (4) \]</p>
+                <p>Where \(\eta\) is the rigidity modulus of the material of the suspension wire of length l and radius r. Eliminating \( I_0 \) from Eqs (1) and (2) and using Eq (4) we get</p>
+                <p>\[ \eta = \frac{8\pi l I_1}{r^4(T_1^2 - T_0^2)} \quad ......... (5) \]</p>
+                <p>If l and r are put in meter, \( I_1 \) in kg-m<sup>2</sup>, then \(\eta\) will be in N.m<sup>-2</sup>.</p>
+
+                <h2>PROCEDURE</h2>
+                <ol type="i">
+                    <li>The mass (M) of the known body is determined by a rough balance or a spring balance while its diameter (2R) or breadth (b) and length (L) are measured by a slide callipers. Its moment of inertia (I<sub>1</sub>) is then calculated from the relation Eq (3).</li>
+                    <li>The cradle alone is made to perform torsional oscillations with a small angular amplitude and the time period for 30 complete oscillations is noted thrice. The mean of these three observed times when divided by 30, we get the period (T<sub>0</sub>) of the cradle.</li>
+                    <li>The length l of the suspension wire from its point of suspension to the point where the frame is attached, is measured by a steel tape thrice and its mean value is found out.</li>
+                    <li>The diameter of the suspension wire is measured by a screw gauge at least in four different places and at each place this diameter is found out in two perpendicular directions. When the mean of these diameters (d) is halved and corrected for the instrumental error of the screw gauge, we get the mean corrected radius r = (d/2) of the suspension wire.</li>
+                    <li>The known body is placed horizontally on the cradle and the period of oscillation (T<sub>1</sub>) of the cradle and the known body together, is similarly determined.</li>
+                    <li>Putting the values of I<sub>1</sub>, l, r, T<sub>1</sub> and T<sub>0</sub> in Eq. (5), &eta; is calculated.</li>
+                </ol>
+
+                <h2>SAMPLE QUESTIONS FOR DYNAMIC METHOD EXPERIMENT</h2>
+                <ol>
+                    <li>Why is it called torsion pendulum? Which type of motion is exhibited by Torsional pendulum?</li>
+                    <li>What is the instrument used to measure the radius of the wire? What is meant by least count of screw gauge?</li>
+                    <li>What is meant by positive and negative zero error in screw gauge?</li>
+                    <li>What happens to the period of oscillation when the length of suspension wire is decreased?</li>
+                    <li>Define moment of inertia.</li>
+                    <li>If the radius of the wire is doubled, what happens to the moment of inertia?</li>
+                    <li>Whether Rigidity modulus &eta; increases or decreases when length of the rod is increased in dynamic experiment?</li>
+                    <li>Why is this method called dynamic method?</li>
+                    <li>Is modulus of rigidity of a liquid is zero or one?</li>
+                    <li>Why Dynamic method is superior to static one?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="experiment" class="tab-content">
+            <div class="exp-container">
+                <div class="controls panel">
+                    <h3>Apparatus Setup</h3>
+                    
+                    <h4>Wire Dimensions</h4>
+                    <label>Length of wire (l): <span id="val-l">30.0</span> cm</label>
+                    <input type="range" id="slider-l" min="28.0" max="32.0" step="0.1" value="30.0">
+
+                    <label>Radius of wire (r): <span id="val-r">0.50</span> mm</label>
+                    <input type="range" id="slider-r" min="0.25" max="0.75" step="0.01" value="0.50">
+
+                    <h4>Cylinder Dimensions (Known Body)</h4>
+                    <label>Mass (M): <span id="val-m">1.85</span> kg</label>
+                    <input type="range" id="slider-m" min="1.70" max="2.00" step="0.01" value="1.85">
+
+                    <label>Length (L): <span id="val-Lcyl">7.0</span> cm</label>
+                    <input type="range" id="slider-Lcyl" min="6.0" max="8.0" step="0.1" value="7.0">
+
+                    <label>Radius (R): <span id="val-Rcyl">2.0</span> cm</label>
+                    <input type="range" id="slider-Rcyl" min="1.0" max="5.0" step="0.1" value="2.0">
+
+                    <div class="actions">
+                        <button id="btn-cradle" onclick="runSimulation('cradle')">1. Oscillate Cradle Only</button>
+                        <button id="btn-both" onclick="runSimulation('both')" disabled>2. Oscillate Cradle + Cylinder</button>
+                        <button id="btn-reset" onclick="resetExperiment()" class="secondary">Reset</button>
+                    </div>
+                </div>
+
+                <div class="visualization panel">
+                    <h3>Simulation</h3>
+                    <div id="pendulum-container">
+                        <div id="support"></div>
+                        <div id="wire"></div>
+                        <div id="cradle"></div>
+                        <div id="cylinder" class="hidden"></div>
+                    </div>
+                    <p id="sim-status">Set dimensions and start oscillation...</p>
+                </div>
+            </div>
+
+            <div class="observations panel">
+                <h2>OBSERVATIONS</h2>
+                <h3>Table 3: Determination of the periods of oscillation</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Oscillating body</th>
+                            <th>Time for 30 oscillations (t) in Sec</th>
+                            <th>Mean time (t) in Sec</th>
+                            <th>Time period in second = t/30 in Sec</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">Cradle</td>
+                            <td>1. <span id="c-t1">-</span></td>
+                            <td rowspan="3" id="c-tmean">-</td>
+                            <td rowspan="3" id="c-T0">T<sub>0</sub> = -</td>
+                        </tr>
+                        <tr><td>2. <span id="c-t2">-</span></td></tr>
+                        <tr><td>3. <span id="c-t3">-</span></td></tr>
+                        <tr>
+                            <td rowspan="3">Cradle + known body</td>
+                            <td>1. <span id="b-t1">-</span></td>
+                            <td rowspan="3" id="b-tmean">-</td>
+                            <td rowspan="3" id="b-T1">T<sub>1</sub> = -</td>
+                        </tr>
+                        <tr><td>2. <span id="b-t2">-</span></td></tr>
+                        <tr><td>3. <span id="b-t3">-</span></td></tr>
+                    </tbody>
+                </table>
+
+                <div class="graph-container">
+                    <canvas id="oscillationGraph"></canvas>
+                </div>
+
+                <h2>CALCULATIONS</h2>
+                <div class="calc-box">
+                    <p>\[ \eta = \frac{8\pi l I_1}{r^4(T_1^2 - T_0^2)} \]</p>
+                    <p><strong>Calculated Moment of Inertia (\( I_1 \)):</strong> <span id="calc-I1">-</span> kg·m<sup>2</sup></p>
+                    <p><strong>Calculated Rigidity Modulus (\( \eta \)):</strong> <span id="calc-eta">-</span></p>
+                </div>
+
+                <h2>ERROR ANALYSIS</h2>
+                <div class="calc-box">
+                    <p>\[ \eta = \frac{8\pi l I_1}{r^4(T_1^2 - T_0^2)} = \frac{8\pi l}{r^4(T_1^2 - T_0^2)} M \left(\frac{L^2}{12} + \frac{R^2}{4}\right) \]</p>
+                    <p>\[ \left(\frac{\delta \eta}{\eta}\right)_{max} = \frac{\delta l}{l} + 4\frac{\delta r}{r} + \frac{\delta (T_1^2 - T_0^2)}{(T_1^2 - T_0^2)} + \frac{\delta(L^2 + 3R^2)}{(L^2 + 3R^2)} \]</p>
+                    <p>\[ = \frac{\delta l}{l} + 4\frac{\delta r}{r} + \frac{2\delta T((T_1 - T_0))}{(T_1^2 - T_0^2)} + \frac{2L\delta L + 6R\delta R}{L^2 + 3R^2} \]</p>
+                    <hr>
+                    <p>Where \(\delta l\)= 2 div. of meter scale, \(\delta r\) = least count of screw gauge</p>
+                    <p>\(\delta T = \delta t\), \(\delta t\)=1 smallest div. of stop watch, \(\delta L\) = v.c of slide callipers, \(\delta R\)= v.c of slide callipers</p>
+                    <p>Now putting the value of l, r, T, L and R we can calculate \( \left(\frac{\delta \eta}{\eta}\right)_{max} \). Next multiplying it by 100 we get % error in '\(\eta\)'.</p>
+                    
+                    <p><strong>Automated % Error:</strong> <span id="calc-error">-</span> %</p>
+                </div>
+
+                <h2>PRECAUTIONS:</h2>
+                <ul id="precautions-list">
+                    <li>The suspension wire must be perfectly straight and free from kinks.</li>
+                    <li>The amplitude of torsional oscillation should be kept small to remain within the elastic limit.</li>
+                    <li>The axis of oscillation must coincide with the axis of the wire.</li>
+                </ul>
+
+                <h2>DISCUSSIONS:</h2>
+                <ul id="discussions-list">
+                    <li>The dynamic method eliminates static friction issues present in static methods.</li>
+                    <li>Care must be taken when measuring the radius of the wire since it appears in the 4th power in the formula, making it the largest source of potential error.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about" class="tab-content">
+            <div class="document-section">
+                
+                <div class="mentorship-quote">
+                    This Physics Virtual Laboratory has been conceptualized and developed under the academic guidance and mentorship of Prof. Subarna Datta. The objective of this platform is to provide engineering students with an interactive, realistic, and accessible environment for performing physics experiments digitally, thereby enhancing conceptual understanding and laboratory learning.
+                </div>
+
+                <div class="contributors-container">
+                    <button id="toggle-contributors" class="accordion-btn">
+                        <span id="toggle-text">Hide Contributors</span>
+                        <span id="toggle-icon">︿</span>
+                    </button>
+                    
+                    <div id="contributors-list" class="contributors-grid">
+                        
+                        <div class="contributor-card">
+                            <div class="avatar">
+                                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                            </div>
+                            <h3 class="contributor-name">Koyel Bandyopadhyay</h3>
+                            <p class="contributor-role">Contributor</p>
+                            <button class="profile-btn">Profile Coming Soon</button>
+                        </div>
+
+                        <div class="contributor-card">
+                            <div class="avatar">
+                                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                            </div>
+                            <h3 class="contributor-name">Ashmit Bhadra</h3>
+                            <p class="contributor-role">Contributor</p>
+                            <button class="profile-btn">Profile Coming Soon</button>
+                        </div>
+
+                        <div class="contributor-card">
+                            <div class="avatar">
+                                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                            </div>
+                            <h3 class="contributor-name">Sattwik Modak</h3>
+                            <p class="contributor-role">Contributor</p>
+                            <button class="profile-btn">Profile Coming Soon</button>
+                        </div>
+
+                        <div class="contributor-card">
+                            <div class="avatar">
+                                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                            </div>
+                            <h3 class="contributor-name">Sangita Kanta</h3>
+                            <p class="contributor-role">Contributor</p>
+                            <button class="profile-btn">Profile Coming Soon</button>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
