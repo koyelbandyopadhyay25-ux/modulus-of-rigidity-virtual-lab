@@ -386,3 +386,27 @@ table {
         margin-top: 0;
     }
 }
+/* =========================================
+   🌓 SVG THEME TOGGLE ICONS
+   ========================================= */
+
+/* Default (Light Mode): Show Moon, Hide Sun */
+.sun-icon { 
+    display: none; 
+}
+.moon-icon { 
+    display: block; 
+}
+
+/* Dark Mode: Show Sun, Hide Moon */
+[data-theme="dark"] .sun-icon { 
+    display: block; 
+}
+[data-theme="dark"] .moon-icon { 
+    display: none; 
+}
+
+/* Smooth transition for the SVG colors */
+.icon-btn svg {
+    transition: stroke 0.3s ease;
+}
